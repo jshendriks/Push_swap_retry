@@ -6,12 +6,10 @@
 /*   By: jhendrik <marvin@42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/06 17:43:55 by jhendrik      #+#    #+#                 */
-/*   Updated: 2023/04/06 18:17:59 by jhendrik      ########   odam.nl         */
+/*   Updated: 2023/04/06 18:32:03 by jhendrik      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 #include "sorting.h"
-
-static void	sorting_five_else(t_stack **a, t_stack **b);
 
 static void	case_six(t_stack **a)
 {
@@ -49,7 +47,14 @@ static void	sorting_five_second(t_stack **a, t_stack **b)
 	max = ft_max(*a);
 	min = ft_min(*a);
 	if (max->index == 4 && min->index == 3)
-		sorting_five_else(a, b);
+	{
+		push_b_ntimes(a, b, 2);
+		if (issorted_asc(*a) >= 0)
+			ft_three_asc_a(a, b);
+		if (issorted_des(*b) >= 0)
+			ft_two_des_b(a, b);
+		merge(a, b, 2);
+	}
 	else
 	{
 		swap_a(a);
