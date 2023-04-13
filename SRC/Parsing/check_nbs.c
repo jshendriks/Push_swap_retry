@@ -6,7 +6,7 @@
 /*   By: jhendrik <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/09 11:18:09 by jhendrik      #+#    #+#                 */
-/*   Updated: 2023/04/06 12:02:31 by jhendrik      ########   odam.nl         */
+/*   Updated: 2023/04/13 15:47:18 by jhendrik      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 #include "parsing.h"
@@ -55,6 +55,8 @@ static int	check_strnum(char *str)
 		}
 		if (*str == '-' || *str == '+')
 			temp++;
+		if (*temp == '\0')
+			return (0);
 		while (*temp)
 		{
 			if (ft_isdigit(*temp) != 1)

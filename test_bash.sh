@@ -56,6 +56,12 @@ echo -e $Green $TEMP_VAR $Reset
 echo "Input: 4 1 2 3"
 TEMP_VAR="$(./push_swap 4 1 2 3 | wc -l)"
 echo -e $Green $TEMP_VAR $Reset
+echo "Input: 3 1 2 4"
+TEMP_VAR="$(./push_swap 3 1 2 4 | wc -l)"
+echo -e $Green $TEMP_VAR $Reset
+echo "Input: 2 1 3 4"
+TEMP_VAR="$(./push_swap 2 1 3 4 | wc -l)"
+echo -e $Green $TEMP_VAR $Reset
 
 echo "---------------------------------------------------"
 

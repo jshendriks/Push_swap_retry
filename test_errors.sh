@@ -43,3 +43,9 @@ echo "Output: ..."
 echo "Input: 1 2 3 4"
 echo "Output: ..."
 ./push_swap 1 2 3 4
+echo "Input: -"
+echo "Output: ..."
+./push_swap -
+echo "Input: +"
+echo "Output: ..."
+./push_swap +

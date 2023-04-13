@@ -56,6 +56,12 @@ echo -e $Green $TEMP_VAR $Reset
 echo "Input: 4 1 2 3"
 TEMP_VAR="$(ARG="4 1 2 3"; ./push_swap $ARG | ./checker_Mac $ARG)"
 echo -e $Green $TEMP_VAR $Reset
+echo "Input: 3 1 2 4"
+TEMP_VAR="$(ARG="3 1 2 4"; ./push_swap $ARG | ./checker_Mac $ARG)"
+echo -e $Green $TEMP_VAR $Reset
+echo "Input: 2 1 3 4"
+TEMP_VAR="$(ARG="2 1 3 4"; ./push_swap $ARG | ./checker_Mac $ARG)"
+echo -e $Green $TEMP_VAR $Reset
 
 echo "---------------------------------------------------"
 
