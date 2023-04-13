@@ -6,7 +6,7 @@
 /*   By: jhendrik <marvin@42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/06 16:52:10 by jhendrik      #+#    #+#                 */
-/*   Updated: 2023/04/06 17:30:23 by jhendrik      ########   odam.nl         */
+/*   Updated: 2023/04/13 11:49:40 by jhendrik      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 #include "utils.h"
@@ -75,12 +75,7 @@ t_stack	*ft_nth_max(t_stack *a, size_t n)
 	{
 		sizea = ft_stacksize(a);
 		if (n <= sizea)
-		{
-			if (n > (sizea / 2))
-				return (ft_nth_min(a, sizea - n + 1));
-			else
-				return (rec_nth_max(a, n));
-		}
+			return (rec_nth_max(a, n));
 		return (NULL);
 	}
 	return (NULL);
@@ -94,12 +89,7 @@ t_stack	*ft_nth_min(t_stack *a, size_t n)
 	{
 		sizea = ft_stacksize(a);
 		if (n <= sizea)
-		{
-			if (n > (sizea / 2))
-				return (ft_nth_max(a, sizea - n + 1));
-			else
-				return (rec_nth_min(a, n));
-		}
+			return (rec_nth_min(a, n));
 		return (NULL);
 	}
 	return (NULL);
