@@ -6,7 +6,7 @@
 /*   By: jhendrik <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/09 12:43:16 by jhendrik      #+#    #+#                 */
-/*   Updated: 2023/03/09 12:46:28 by jhendrik      ########   odam.nl         */
+/*   Updated: 2023/04/14 16:24:52 by jhendrik      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 #include "operations.h"
@@ -25,18 +25,18 @@
 
 void	swap_a(t_stack **a)
 {
-	ft_swap(a);
+	ps_swap(a);
 	ft_printf("sa\n");
 }
 
 void	swap_b(t_stack **b)
 {
-	ft_swap(b);
+	ps_swap(b);
 	ft_printf("sb\n");
 }
 
 void	swap_ab(t_stack **a, t_stack **b)
 {
-	ft_swap_ab(a, b);
+	ps_swap_ab(a, b);
 	ft_printf("ss\n");
 }

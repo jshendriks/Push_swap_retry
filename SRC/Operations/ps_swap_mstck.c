@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_swap_mstck.c                                    :+:    :+:            */
+/*   ps_swap_mstck.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jhendrik <marvin@42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/03 14:45:26 by jhendrik      #+#    #+#                 */
-/*   Updated: 2023/04/03 17:37:42 by jhendrik      ########   odam.nl         */
+/*   Updated: 2023/04/14 16:24:17 by jhendrik      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 #include "operations.h"
@@ -29,7 +29,7 @@
 		Calls ft_swap() on both stacks.
  */
 
-static void	ft_swap2(t_mstck **a)
+static void	st_swap2(t_mstck **a)
 {
 	t_mstck	*first;
 	t_mstck	*last;
@@ -43,7 +43,7 @@ static void	ft_swap2(t_mstck **a)
 	*a = last;
 }
 
-static void	ft_swap_more(t_mstck **a)
+static void	st_swap_more(t_mstck **a)
 {
 	t_mstck	*tmp1;
 	t_mstck	*tmp2;
@@ -60,7 +60,7 @@ static void	ft_swap_more(t_mstck **a)
 	*a = tmp2;
 }
 
-void	ft_swap_mstck(t_mstck **a)
+void	ps_swap_mstck(t_mstck **a)
 {
 	if (a != NULL)
 	{
@@ -69,9 +69,9 @@ void	ft_swap_mstck(t_mstck **a)
 			if ((*a)->next != NULL)
 			{
 				if (((*a)->next)->next == NULL)
-					ft_swap2(a);
+					st_swap2(a);
 				else
-					ft_swap_more(a);
+					st_swap_more(a);
 				(*a)->index = 0;
 				(*a)->next->index = 1;
 			}
@@ -79,8 +79,8 @@ void	ft_swap_mstck(t_mstck **a)
 	}
 }
 
-void	ft_swap_ab_mstck(t_mstck **a, t_mstck **b)
+void	ps_swap_ab_mstck(t_mstck **a, t_mstck **b)
 {
-	ft_swap_mstck(a);
-	ft_swap_mstck(b);
+	ps_swap_mstck(a);
+	ps_swap_mstck(b);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_rotate.c                                        :+:    :+:            */
+/*   ps_rotate.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jhendrik <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/09 12:24:26 by jhendrik      #+#    #+#                 */
-/*   Updated: 2023/04/03 14:38:57 by jhendrik      ########   odam.nl         */
+/*   Updated: 2023/04/14 16:18:18 by jhendrik      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 #include "operations.h"
@@ -46,18 +46,18 @@ static void	rotate(t_stack **a)
 		first = *a;
 		if (first->next != NULL)
 		{
-			last = ft_stacklast(*a);
+			last = ps_stacklast(*a);
 			*a = first->next;
 			(*a)->prev = NULL;
 			last->next = first;
 			first->prev = last;
 			first->next = NULL;
-			ft_indexing(*a);
+			ps_indexing(*a);
 		}
 	}
 }
 
-static void	ft_rotate_ab(t_stack **a, t_stack **b)
+static void	ps_rotate_ab(t_stack **a, t_stack **b)
 {
 	rotate(a);
 	rotate(b);
@@ -77,6 +77,6 @@ void	rotate_b(t_stack **b)
 
 void	rotate_ab(t_stack **a, t_stack **b)
 {
-	ft_rotate_ab(a, b);
+	ps_rotate_ab(a, b);
 	ft_printf("rr\n");
 }

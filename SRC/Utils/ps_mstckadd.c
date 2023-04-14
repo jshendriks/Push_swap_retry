@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_mstckadd.c                                      :+:    :+:            */
+/*   ps_mstckadd.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jhendrik <marvin@42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/27 14:56:24 by jhendrik      #+#    #+#                 */
-/*   Updated: 2023/03/27 14:58:53 by jhendrik      ########   odam.nl         */
+/*   Updated: 2023/04/14 16:52:52 by jhendrik      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 #include "utils.h"
@@ -26,7 +26,7 @@
 		If stck is NULL, stck becomes the new node.
  */
 
-void	ft_mstckadd_front(t_mstck **stck, t_mstck *new)
+void	ps_mstckadd_front(t_mstck **stck, t_mstck *new)
 {
 	if (stck != NULL)
 	{
@@ -37,12 +37,12 @@ void	ft_mstckadd_front(t_mstck **stck, t_mstck *new)
 			new->next = *stck;
 			(*stck)->prev = new;
 			*stck = new;
-			ft_mstck_indexing(*stck);
+			ps_mstck_indexing(*stck);
 		}
 	}
 }
 
-void	ft_mstckadd_back(t_mstck **stck, t_mstck *new)
+void	ps_mstckadd_back(t_mstck **stck, t_mstck *new)
 {
 	t_mstck	*last;
 
@@ -52,10 +52,10 @@ void	ft_mstckadd_back(t_mstck **stck, t_mstck *new)
 			*stck = new;
 		else
 		{
-			last = ft_mstcklast(*stck);
+			last = ps_mstcklast(*stck);
 			last->next = new;
 			new->prev = last;
-			new->index = ft_mstcksize(*stck) - 1;
+			new->index = ps_mstcksize(*stck) - 1;
 		}
 	}
 }

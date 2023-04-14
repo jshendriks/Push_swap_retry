@@ -1,42 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_small_two.c                                     :+:    :+:            */
+/*   ps_smallsort.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jhendrik <marvin@42.fr>                      +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/03/23 09:37:00 by jhendrik      #+#    #+#                 */
-/*   Updated: 2023/03/23 09:37:52 by jhendrik      ########   odam.nl         */
+/*   Created: 2023/03/20 11:37:48 by jhendrik      #+#    #+#                 */
+/*   Updated: 2023/04/14 16:41:44 by jhendrik      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 #include "sorting.h"
 
-void	ft_two_asc_a(t_stack **a, t_stack **b)
+void	ps_smallsort(t_stack **a, t_stack **b)
 {
-	if (a != NULL && b != NULL)
-	{
-		if ((*a) != NULL)
-		{
-			if (ft_stacksize(*a) == 2)
-			{
-				if ((*a)->content > ((*a)->next)->content)
-					swap_a(a);
-			}
-		}
-	}
-}
+	const t_stckfnc	jmptbl[] = {
+		NULL,
+		NULL,
+		&ps_two_asc_a,
+		&ps_three_asc_a,
+		&ps_four,
+		&ps_five,
+		&ps_six
+	};
+	int				index;
 
-void	ft_two_des_b(t_stack **a, t_stack **b)
-{
 	if (a != NULL && b != NULL)
 	{
-		if ((*b) != NULL)
+		if (*b == NULL && *a != NULL)
 		{
-			if (ft_stacksize(*b) == 2)
-			{
-				if ((*b)->content < ((*b)->next)->content)
-					swap_b(b);
-			}
+			index = (int)ps_stacksize(*a);
+			if (index > 1)
+				jmptbl[index](a, b);
 		}
 	}
 }

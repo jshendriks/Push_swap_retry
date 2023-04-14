@@ -6,7 +6,7 @@
 /*   By: jhendrik <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/09 18:07:19 by jhendrik      #+#    #+#                 */
-/*   Updated: 2023/04/06 18:16:31 by jhendrik      ########   odam.nl         */
+/*   Updated: 2023/04/14 16:44:29 by jhendrik      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,17 @@
 void	reverse_order_a(t_stack **a, t_stack **b);
 /*Reverses the order of the given stack a.*/
 
-void	ft_smallsort(t_stack **a, t_stack **b);
-void	ft_two_asc_a(t_stack **a, t_stack **b);
-void	ft_two_des_b(t_stack **a, t_stack **b);
-void	ft_three_des_b(t_stack **a, t_stack **b);
-void	ft_three_asc_a(t_stack **a, t_stack **b);
-void	ft_four(t_stack **a, t_stack **b);
-void	ft_five(t_stack **a, t_stack **b);
-void	ft_six(t_stack **a, t_stack **b);
+void	ps_smallsort(t_stack **a, t_stack **b);
+void	ps_two_asc_a(t_stack **a, t_stack **b);
+void	ps_two_des_b(t_stack **a, t_stack **b);
+void	ps_three_des_b(t_stack **a, t_stack **b);
+void	ps_three_asc_a(t_stack **a, t_stack **b);
+void	ps_four(t_stack **a, t_stack **b);
+void	ps_five(t_stack **a, t_stack **b);
+void	ps_six(t_stack **a, t_stack **b);
 
-void	ft_quirkysort(t_mstck **a, t_mstck **b);
+void	ps_quirkysort(t_mstck **a, t_mstck **b);
 
-int		ft_sorting(int argc, char *argv[], t_stack **a);
+int		ps_sorting(int argc, char *argv[], t_stack **a);
 
 #endif

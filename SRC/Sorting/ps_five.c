@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_five.c                                          :+:    :+:            */
+/*   ps_five.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jhendrik <marvin@42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/06 17:43:55 by jhendrik      #+#    #+#                 */
-/*   Updated: 2023/04/13 11:57:45 by jhendrik      ########   odam.nl         */
+/*   Updated: 2023/04/14 16:39:30 by jhendrik      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 #include "sorting.h"
@@ -23,8 +23,8 @@ static void	sorting_five_first(t_stack **a)
 	t_stack	*max;
 	t_stack	*min;
 
-	max = ft_max(*a);
-	min = ft_min(*a);
+	max = ps_max(*a);
+	min = ps_min(*a);
 	if (max->index == 4 && min->index == 2)
 		case_one(a);
 	else if (max->index == 4 && min->index == 3)
@@ -44,15 +44,15 @@ static void	sorting_five_second(t_stack **a, t_stack **b)
 	t_stack	*max;
 	t_stack	*min;
 
-	max = ft_max(*a);
-	min = ft_min(*a);
+	max = ps_max(*a);
+	min = ps_min(*a);
 	if (max->index == 4 && min->index == 3)
 	{
 		push_b_ntimes(a, b, 2);
-		if (issorted_asc(*a) >= 0)
-			ft_three_asc_a(a, b);
-		if (issorted_des(*b) >= 0)
-			ft_two_des_b(a, b);
+		if (issorted_asc(*a) == 0)
+			ps_three_asc_a(a, b);
+		if (issorted_des(*b) == 0)
+			ps_two_des_b(a, b);
 		merge(a, b, 2);
 	}
 	else
@@ -66,14 +66,14 @@ static void	sorting_five_second(t_stack **a, t_stack **b)
 static void	sorting_five_else(t_stack **a, t_stack **b)
 {
 	push_b_ntimes(a, b, 2);
-	if (issorted_asc(*a) >= 0)
-		ft_three_asc_a(a, b);
-	if (issorted_des(*b) >= 0)
-		ft_two_des_b(a, b);
+	if (issorted_asc(*a) == 0)
+		ps_three_asc_a(a, b);
+	if (issorted_des(*b) == 0)
+		ps_two_des_b(a, b);
 	merge(a, b, 2);
 }
 
-void	ft_five(t_stack **a, t_stack **b)
+void	ps_five(t_stack **a, t_stack **b)
 {
 	t_stack	*node1;
 	t_stack	*node2;
@@ -82,10 +82,10 @@ void	ft_five(t_stack **a, t_stack **b)
 	{
 		if ((*a) != NULL && (*b) == NULL)
 		{
-			if (ft_stacksize(*a) == 5)
+			if (ps_stacksize(*a) == 5)
 			{
-				node1 = ft_nth_max(*a, 2);
-				node2 = ft_nth_max(*a, 3);
+				node1 = ps_nth_max(*a, 2);
+				node2 = ps_nth_max(*a, 3);
 				if (node1->index == 0 && node2->index == 1)
 					sorting_five_first(a);
 				else if (node1->index == 1 && node2->index == 0)

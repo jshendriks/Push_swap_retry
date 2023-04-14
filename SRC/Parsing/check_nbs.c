@@ -6,7 +6,7 @@
 /*   By: jhendrik <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/09 11:18:09 by jhendrik      #+#    #+#                 */
-/*   Updated: 2023/04/13 15:47:18 by jhendrik      ########   odam.nl         */
+/*   Updated: 2023/04/14 16:33:30 by jhendrik      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 #include "parsing.h"
@@ -75,7 +75,7 @@ static int	check_strmm(char *str)
 
 	nb = 0;
 	ptr_nb = &nb;
-	return (ft_atoi_overflw((const char *)str, ptr_nb));
+	return (ps_atoi_overflw((const char *)str, ptr_nb));
 }
 
 int	check_input_nums(int argc, char *argv[])
@@ -99,7 +99,7 @@ int	check_input_nums(int argc, char *argv[])
 				return (0);
 			j++;
 		}
-		ft_free_double(ptr);
+		ps_free_double(ptr);
 		i++;
 	}
 	return (1);

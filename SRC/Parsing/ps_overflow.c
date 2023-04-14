@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_overflow.c                                      :+:    :+:            */
+/*   ps_overflow.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jhendrik <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/09 11:07:06 by jhendrik      #+#    #+#                 */
-/*   Updated: 2023/03/21 17:48:32 by jhendrik      ########   odam.nl         */
+/*   Updated: 2023/04/14 16:34:19 by jhendrik      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 #include "parsing.h"
 
 static int	rec_atoi(const char *str, int nb, int sgn, int *flw);
 
-static int	ft_isspace(int c)
+static int	st_isspace(int c)
 {
 	if (c == '\t' || c == '\n' || c == '\v')
 		return (1);
@@ -45,7 +45,7 @@ static int	rec_atoi(const char *str, int nb, int sgn, int *flw)
 {
 	if (*str == '\0')
 		return (nb);
-	else if (ft_isspace(*str) == 1)
+	else if (st_isspace(*str) == 1)
 	{
 		if (sgn != 0 || nb != 0)
 			return (nb);
@@ -66,7 +66,7 @@ static int	rec_atoi(const char *str, int nb, int sgn, int *flw)
 		return (nb);
 }
 
-int	ft_atoi_overflw(const char *str, int *ptr_num)
+int	ps_atoi_overflw(const char *str, int *ptr_num)
 {
 	int	nb;
 	int	flw;

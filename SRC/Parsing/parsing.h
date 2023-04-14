@@ -6,7 +6,7 @@
 /*   By: jhendrik <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/09 11:25:37 by jhendrik      #+#    #+#                 */
-/*   Updated: 2023/03/21 17:46:30 by jhendrik      ########   odam.nl         */
+/*   Updated: 2023/04/14 16:34:34 by jhendrik      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	check_doubles(t_stack *stck);
   If stck is NULL, it returns -1.*/
 
 //FUNCTIONS TO CONVERT -------------
-int	ft_atoi_overflw(const char *str, int *ptr_num);
+int	ps_atoi_overflw(const char *str, int *ptr_num);
 /*This function conferts the string str to an integer,
   stored in ptr_num. If the string contains an integer bigger
   than INT_MAX or smaller than INT_MIN, the function returns zero

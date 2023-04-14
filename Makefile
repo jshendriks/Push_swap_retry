@@ -6,14 +6,14 @@
 #    By: jhendrik <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/03/09 18:24:29 by jhendrik      #+#    #+#                  #
-#    Updated: 2023/04/06 18:18:47 by jhendrik      ########   odam.nl          #
+#    Updated: 2023/04/14 16:04:31 by jhendrik      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := push_swap
 HEADER := ./SRC/src.h
-LIBS_HEADER := ./libft/libft.h
-LIBS := ./libft/libft.a
+LIBFT_HEADER := ./libft/libft.h
+LIBFT := ./libft/libft.a
 SRCFILES :=	./SRC/Sorting/reverse_order.c		\
 			./SRC/Sorting/ft_smallsort.c		\
 			./SRC/Sorting/smallsort_nb.c		\
@@ -84,16 +84,18 @@ White="\033[0;37m"			# White
 # Bold text style
 Bold="\033[1m"
 
-all: $(NAME)
+all: make_libft $(NAME)
 
 $(NAME): $(OBJFILES)
 	@echo $(Light_Blue) Compiling $(NAME) $(Reset)
-	@$(MAKE) bonus -C libft
-	@$(CC) $(LIBS) $(OBJFILES) -o $(NAME)
+	@$(CC) $(LIBFT) $(OBJFILES) -o $(NAME)
 	@echo $(Green) Succesfully made program $(NAME) $(Reset)
 
 %.o: %.c $(HEADER)
 	@$(CC) -c $(CFLAGS) -o $@ $< 
+
+make_libft:
+	@$(MAKE) bonus -C libft
 
 clean:
 	@echo $(Yellow) Cleaning $(NAME) $(Reset)
@@ -107,4 +109,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all, clean, fclean, re
+.PHONY: make_libft, all, clean, fclean, re

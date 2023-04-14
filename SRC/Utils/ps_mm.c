@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_mm.c                                            :+:    :+:            */
+/*   ps_mm.c                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jhendrik <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/20 12:20:21 by jhendrik      #+#    #+#                 */
-/*   Updated: 2023/04/13 11:50:18 by jhendrik      ########   odam.nl         */
+/*   Updated: 2023/04/14 16:51:06 by jhendrik      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 #include "utils.h"
 
-t_stack	*ft_max(t_stack *head)
+t_stack	*ps_max(t_stack *head)
 {
 	t_stack	*node;
 	t_stack	*max;
@@ -32,7 +32,7 @@ t_stack	*ft_max(t_stack *head)
 	return (max);
 }
 
-t_stack	*ft_min(t_stack *head)
+t_stack	*ps_min(t_stack *head)
 {
 	t_stack	*node;
 	t_stack	*min;
@@ -53,7 +53,7 @@ t_stack	*ft_min(t_stack *head)
 	return (min);
 }
 
-t_mstck	*ft_mstckmax(t_mstck *head)
+t_mstck	*ps_mstckmax(t_mstck *head)
 {
 	t_mstck	*node;
 	t_mstck	*max;
@@ -74,7 +74,7 @@ t_mstck	*ft_mstckmax(t_mstck *head)
 	return (max);
 }
 
-t_mstck	*ft_mstckmin(t_mstck *head)
+t_mstck	*ps_mstckmin(t_mstck *head)
 {
 	t_mstck	*node;
 	t_mstck	*min;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_small_three.c                                   :+:    :+:            */
+/*   ps_small_three.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jhendrik <marvin@42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/23 09:36:35 by jhendrik      #+#    #+#                 */
-/*   Updated: 2023/03/27 14:08:29 by jhendrik      ########   odam.nl         */
+/*   Updated: 2023/04/14 16:40:23 by jhendrik      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 #include "sorting.h"
@@ -51,7 +51,7 @@ static void	cases_asc(t_stack **a, t_stack *max, t_stack *min)
 		rrotate_a(a);
 }
 
-void	ft_three_des_b(t_stack **a, t_stack **b)
+void	ps_three_des_b(t_stack **a, t_stack **b)
 {
 	t_stack	*max;
 	t_stack	*min;
@@ -60,17 +60,17 @@ void	ft_three_des_b(t_stack **a, t_stack **b)
 	{
 		if ((*b) != NULL)
 		{
-			if (ft_stacksize(*b) == 3)
+			if (ps_stacksize(*b) == 3)
 			{
-				max = ft_max(*b);
-				min = ft_min(*b);
+				max = ps_max(*b);
+				min = ps_min(*b);
 				cases_des(b, max, min);
 			}
 		}
 	}
 }
 
-void	ft_three_asc_a(t_stack **a, t_stack **b)
+void	ps_three_asc_a(t_stack **a, t_stack **b)
 {
 	t_stack	*max;
 	t_stack	*min;
@@ -79,10 +79,10 @@ void	ft_three_asc_a(t_stack **a, t_stack **b)
 	{
 		if ((*a) != NULL)
 		{
-			if (ft_stacksize(*a) == 3)
+			if (ps_stacksize(*a) == 3)
 			{
-				max = ft_max(*a);
-				min = ft_min(*a);
+				max = ps_max(*a);
+				min = ps_min(*a);
 				cases_asc(a, max, min);
 			}
 		}

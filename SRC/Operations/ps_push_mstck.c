@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_push_mstck.c                                    :+:    :+:            */
+/*   ps_push_mstck.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jhendrik <marvin@42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/03 14:27:17 by jhendrik      #+#    #+#                 */
-/*   Updated: 2023/04/03 14:32:00 by jhendrik      ########   odam.nl         */
+/*   Updated: 2023/04/14 16:10:30 by jhendrik      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 #include "operations.h"
@@ -34,7 +34,7 @@
  		Calls the function ft_push_b() and prints message.
  */
 
-static void	ft_push_a(t_mstck **a, t_mstck **b)
+static void	ps_push_a(t_mstck **a, t_mstck **b)
 {
 	t_mstck	*tmp_b1;
 	t_mstck	*tmp_b2;
@@ -53,15 +53,15 @@ static void	ft_push_a(t_mstck **a, t_mstck **b)
 			}
 			else
 				*b = NULL;
-			ft_mstckadd_front(a, tmp_b1);
-			ft_mstck_indexing(*a);
+			ps_mstckadd_front(a, tmp_b1);
+			ps_mstck_indexing(*a);
 			if (*b != NULL)
-				ft_mstck_indexing(*b);
+				ps_mstck_indexing(*b);
 		}
 	}
 }
 
-static void	ft_push_b(t_mstck **a, t_mstck **b)
+static void	ps_push_b(t_mstck **a, t_mstck **b)
 {
 	t_mstck	*tmp_a;
 
@@ -76,20 +76,20 @@ static void	ft_push_b(t_mstck **a, t_mstck **b)
 		}
 		else
 			*a = NULL;
-		ft_mstckadd_front(b, tmp_a);
-		ft_mstck_indexing(*a);
-		ft_mstck_indexing(*b);
+		ps_mstckadd_front(b, tmp_a);
+		ps_mstck_indexing(*a);
+		ps_mstck_indexing(*b);
 	}
 }
 
 void	push_a_mstck(t_mstck **a, t_mstck **b)
 {
-	ft_push_a(a, b);
+	ps_push_a(a, b);
 	ft_printf("pa\n");
 }
 
 void	push_b_mstck(t_mstck **a, t_mstck **b)
 {
-	ft_push_b(a, b);
+	ps_push_b(a, b);
 	ft_printf("pb\n");
 }

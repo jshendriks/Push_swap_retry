@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_makestack.c                                     :+:    :+:            */
+/*   ps_makestack.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jhendrik <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/09 15:04:41 by jhendrik      #+#    #+#                 */
-/*   Updated: 2023/03/09 15:22:28 by jhendrik      ########   odam.nl         */
+/*   Updated: 2023/04/14 16:49:32 by jhendrik      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 #include "utils.h"
@@ -35,20 +35,20 @@ static t_stack	*add_split(char **split, t_stack **stck)
 	j = 0;
 	while (split[j] != NULL)
 	{
-		node = ft_stacknew(ft_atoi((const char *)split[j]));
+		node = ps_stacknew(ft_atoi((const char *)split[j]));
 		if (node == NULL)
 		{
-			ft_stackclear(stck);
-			ft_free_double(split);
+			ps_stackclear(stck);
+			ps_free_double(split);
 			return (NULL);
 		}
-		ft_stackadd_back(stck, node);
+		ps_stackadd_back(stck, node);
 		j++;
 	}
 	return (*stck);
 }
 
-t_stack	*ft_makestack_int(int argc, char *argv[])
+t_stack	*ps_makestack_int(int argc, char *argv[])
 {
 	t_stack	*stck;
 	t_stack	*node;
@@ -65,12 +65,12 @@ t_stack	*ft_makestack_int(int argc, char *argv[])
 			node = add_split(split, &stck);
 			if (node == NULL)
 				return (NULL);
-			ft_free_double(split);
+			ps_free_double(split);
 			i++;
 		}
 		else
 		{
-			ft_stackclear(&stck);
+			ps_stackclear(&stck);
 			return (NULL);
 		}
 	}

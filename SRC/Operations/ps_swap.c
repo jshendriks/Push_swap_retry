@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_swap.c                                          :+:    :+:            */
+/*   ps_swap.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jhendrik <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/09 12:35:21 by jhendrik      #+#    #+#                 */
-/*   Updated: 2023/03/09 12:42:57 by jhendrik      ########   odam.nl         */
+/*   Updated: 2023/04/14 16:23:21 by jhendrik      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 #include "operations.h"
@@ -29,7 +29,7 @@
 		Calls ft_swap() on both stacks.
  */
 
-static void	ft_swap2(t_stack **a)
+static void	st_swap2(t_stack **a)
 {
 	t_stack	*first;
 	t_stack	*last;
@@ -43,7 +43,7 @@ static void	ft_swap2(t_stack **a)
 	*a = last;
 }
 
-static void	ft_swap_more(t_stack **a)
+static void	st_swap_more(t_stack **a)
 {
 	t_stack	*tmp1;
 	t_stack	*tmp2;
@@ -60,7 +60,7 @@ static void	ft_swap_more(t_stack **a)
 	*a = tmp2;
 }
 
-void	ft_swap(t_stack **a)
+void	ps_swap(t_stack **a)
 {
 	if (a != NULL)
 	{
@@ -69,9 +69,9 @@ void	ft_swap(t_stack **a)
 			if ((*a)->next != NULL)
 			{
 				if (((*a)->next)->next == NULL)
-					ft_swap2(a);
+					st_swap2(a);
 				else
-					ft_swap_more(a);
+					st_swap_more(a);
 				(*a)->index = 0;
 				(*a)->next->index = 1;
 			}
@@ -79,8 +79,8 @@ void	ft_swap(t_stack **a)
 	}
 }
 
-void	ft_swap_ab(t_stack **a, t_stack **b)
+void	ps_swap_ab(t_stack **a, t_stack **b)
 {
-	ft_swap(a);
-	ft_swap(b);
+	ps_swap(a);
+	ps_swap(b);
 }

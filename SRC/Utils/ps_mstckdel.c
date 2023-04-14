@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_mstckdel.c                                      :+:    :+:            */
+/*   ps_mstckdel.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jhendrik <marvin@42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/27 14:50:52 by jhendrik      #+#    #+#                 */
-/*   Updated: 2023/04/06 13:24:57 by jhendrik      ########   odam.nl         */
+/*   Updated: 2023/04/14 16:53:14 by jhendrik      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 #include "utils.h"
@@ -31,7 +31,7 @@
 		If *stck is NULL, the function does not do anything.
   */
 
-void	ft_mstckdelone(t_mstck *stck)
+void	ps_mstckdelone(t_mstck *stck)
 {
 	if (stck != NULL)
 	{
@@ -51,7 +51,7 @@ void	ft_mstckdelone(t_mstck *stck)
 	}
 }
 
-void	ft_mstckclear(t_mstck **stck)
+void	ps_mstckclear(t_mstck **stck)
 {
 	t_mstck	*tmp_cur;
 	t_mstck	*tmp_prv;
@@ -68,7 +68,7 @@ void	ft_mstckclear(t_mstck **stck)
 			{
 				tmp_prv = tmp_cur;
 				tmp_cur = tmp_cur->next;
-				ft_mstckdelone(tmp_prv);
+				ps_mstckdelone(tmp_prv);
 			}
 			*stck = NULL;
 		}

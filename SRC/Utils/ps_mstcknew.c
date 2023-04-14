@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_mstcknew.c                                      :+:    :+:            */
+/*   ps_mstcknew.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jhendrik <marvin@42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/27 14:36:51 by jhendrik      #+#    #+#                 */
-/*   Updated: 2023/04/04 17:11:36 by jhendrik      ########   odam.nl         */
+/*   Updated: 2023/04/14 16:58:57 by jhendrik      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 #include "utils.h"
 
-static t_moves	*ft_movesnew(void)
+static t_moves	*st_movesnew(void)
 {
 	t_moves	*moves;
 
@@ -33,7 +33,7 @@ static t_moves	*ft_movesnew(void)
 	return (moves);
 }
 
-static t_map	*ft_free_incommap(t_map *map)
+static t_map	*st_free_incommap(t_map *map)
 {	
 	if (map->upup == NULL)
 		return (free(map), NULL);
@@ -57,41 +57,41 @@ static t_map	*ft_free_incommap(t_map *map)
 	}
 }
 
-static t_map	*ft_allocmoves(t_map *map)
+static t_map	*st_allocmoves(t_map *map)
 {
-	map->upup = ft_movesnew();
+	map->upup = st_movesnew();
 	if (map->upup == NULL)
-		return (ft_free_incommap(map));
-	map->updown = ft_movesnew();
+		return (st_free_incommap(map));
+	map->updown = st_movesnew();
 	if (map->updown == NULL)
-		return (ft_free_incommap(map));
-	map->downdown = ft_movesnew();
+		return (st_free_incommap(map));
+	map->downdown = st_movesnew();
 	if (map->downdown == NULL)
-		return (ft_free_incommap(map));
-	map->downup = ft_movesnew();
+		return (st_free_incommap(map));
+	map->downup = st_movesnew();
 	if (map->downup == NULL)
-		return (ft_free_incommap(map));
+		return (st_free_incommap(map));
 	return (map);
 }
 
-static t_map	*ft_mapnew(void)
+static t_map	*st_mapnew(void)
 {
 	t_map	*map;
 
 	map = malloc(sizeof(t_map));
 	if (map == NULL)
 		return (NULL);
-	return (ft_allocmoves(map));
+	return (st_allocmoves(map));
 }
 
-t_mstck	*ft_mstcknew(int content)
+t_mstck	*ps_mstcknew(int content)
 {
 	t_mstck	*node;
 
 	node = malloc(sizeof(t_mstck));
 	if (node == NULL)
 		return (NULL);
-	node->map = ft_mapnew();
+	node->map = st_mapnew();
 	if (node->map == NULL)
 		return (free(node), NULL);
 	node->prev = NULL;

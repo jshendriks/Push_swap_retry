@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_mm_n.c                                          :+:    :+:            */
+/*   ps_mm_n.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jhendrik <marvin@42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/04/06 16:52:10 by jhendrik      #+#    #+#                 */
-/*   Updated: 2023/04/13 11:49:40 by jhendrik      ########   odam.nl         */
+/*   Updated: 2023/04/14 16:52:01 by jhendrik      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 #include "utils.h"
@@ -18,7 +18,7 @@ static t_stack	*rec_nth_max(t_stack *a, size_t n)
 	t_stack	*node;
 
 	if (n == 1)
-		return (ft_max(a));
+		return (ps_max(a));
 	else
 	{
 		prev_max = rec_nth_max(a, n - 1);
@@ -46,7 +46,7 @@ static t_stack	*rec_nth_min(t_stack *a, size_t n)
 	t_stack	*node;
 
 	if (n == 1)
-		return (ft_min(a));
+		return (ps_min(a));
 	else
 	{
 		prev_min = rec_nth_min(a, n - 1);
@@ -67,13 +67,13 @@ static t_stack	*rec_nth_min(t_stack *a, size_t n)
 	}
 }
 
-t_stack	*ft_nth_max(t_stack *a, size_t n)
+t_stack	*ps_nth_max(t_stack *a, size_t n)
 {
 	size_t	sizea;
 
 	if (a != NULL && n != 0)
 	{
-		sizea = ft_stacksize(a);
+		sizea = ps_stacksize(a);
 		if (n <= sizea)
 			return (rec_nth_max(a, n));
 		return (NULL);
@@ -81,13 +81,13 @@ t_stack	*ft_nth_max(t_stack *a, size_t n)
 	return (NULL);
 }
 
-t_stack	*ft_nth_min(t_stack *a, size_t n)
+t_stack	*ps_nth_min(t_stack *a, size_t n)
 {
 	size_t	sizea;
 
 	if (a != NULL && n != 0)
 	{
-		sizea = ft_stacksize(a);
+		sizea = ps_stacksize(a);
 		if (n <= sizea)
 			return (rec_nth_min(a, n));
 		return (NULL);

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_markbest.c                                      :+:    :+:            */
+/*   ps_markbest.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jhendrik <marvin@42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/28 14:31:01 by jhendrik      #+#    #+#                 */
-/*   Updated: 2023/04/04 16:55:32 by jhendrik      ########   odam.nl         */
+/*   Updated: 2023/04/14 16:49:58 by jhendrik      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 #include "utils.h"
@@ -67,7 +67,7 @@ void	set_markszero(t_mstck **a)
 	}
 }
 
-void	ft_markbest(t_mstck **a)
+void	ps_markbest(t_mstck **a)
 {
 	size_t	best;
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_calcmoves.c                                     :+:    :+:            */
+/*   ps_calcmoves.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jhendrik <marvin@42.fr>                      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/27 17:28:27 by jhendrik      #+#    #+#                 */
-/*   Updated: 2023/04/04 17:17:23 by jhendrik      ########   odam.nl         */
+/*   Updated: 2023/04/14 16:47:44 by jhendrik      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 #include "utils.h"
@@ -30,7 +30,7 @@ void	calcmoves_upup(t_mstck *node, t_mstck **b, t_mstck *max, t_mstck *min)
 	}
 	else
 	{
-		place = ft_place(node, b);
+		place = ps_place(node, b);
 		if (place != NULL)
 			move_upup->rb = place->index;
 		(move_upup->pb) += 1;
@@ -38,7 +38,7 @@ void	calcmoves_upup(t_mstck *node, t_mstck **b, t_mstck *max, t_mstck *min)
 	cleanup_moves(move_upup);
 }
 
-void	ft_calcnodemap(t_mstck *node, t_mstck **b, size_t sizea)
+void	ps_calcnodemap(t_mstck *node, t_mstck **b, size_t sizea)
 {
 	t_mstck	*max;
 	t_mstck	*min;
@@ -47,8 +47,8 @@ void	ft_calcnodemap(t_mstck *node, t_mstck **b, size_t sizea)
 	{
 		if (node != NULL && *b != NULL)
 		{
-			max = ft_mstckmax(*b);
-			min = ft_mstckmin(*b);
+			max = ps_mstckmax(*b);
+			min = ps_mstckmin(*b);
 			calcmoves_upup(node, b, max, min);
 			calcmoves_ud(node, b, max, min);
 			calcmoves_ddown(node, b, max, sizea);
@@ -57,7 +57,7 @@ void	ft_calcnodemap(t_mstck *node, t_mstck **b, size_t sizea)
 	}
 }
 
-void	ft_calcmaps(t_mstck **a, t_mstck **b)
+void	ps_calcmaps(t_mstck **a, t_mstck **b)
 {
 	t_mstck	*nodea;
 	size_t	sizea;
@@ -68,10 +68,10 @@ void	ft_calcmaps(t_mstck **a, t_mstck **b)
 		{
 			set_mapszero(a);
 			nodea = *a;
-			sizea = ft_mstcksize(*a);
+			sizea = ps_mstcksize(*a);
 			while (nodea)
 			{
-				ft_calcnodemap(nodea, b, sizea);
+				ps_calcnodemap(nodea, b, sizea);
 				nodea = nodea->next;
 			}
 		}

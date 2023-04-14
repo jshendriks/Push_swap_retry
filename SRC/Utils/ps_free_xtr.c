@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_free_xtr.c                                      :+:    :+:            */
+/*   ps_free_xtr.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jhendrik <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/09 11:37:37 by jhendrik      #+#    #+#                 */
-/*   Updated: 2023/04/06 12:07:51 by jhendrik      ########   odam.nl         */
+/*   Updated: 2023/04/14 16:47:58 by jhendrik      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 #include "./../src.h"
@@ -20,7 +20,7 @@
 		is not NULL for some k.
  */
 
-void	ft_free_double(char **ptr_subs)
+void	ps_free_double(char **ptr_subs)
 {
 	int	k;
 

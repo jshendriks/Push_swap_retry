@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_push.c                                          :+:    :+:            */
+/*   ps_push.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jhendrik <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/09 12:18:45 by jhendrik      #+#    #+#                 */
-/*   Updated: 2023/04/03 14:34:13 by jhendrik      ########   odam.nl         */
+/*   Updated: 2023/04/14 16:09:25 by jhendrik      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 #include "operations.h"
@@ -34,7 +34,7 @@
  		Calls the function ft_push_b() and prints message.
  */
 
-static void	ft_push_a(t_stack **a, t_stack **b)
+static void	ps_push_a(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp_b1;
 	t_stack	*tmp_b2;
@@ -53,15 +53,15 @@ static void	ft_push_a(t_stack **a, t_stack **b)
 			}
 			else
 				*b = NULL;
-			ft_stackadd_front(a, tmp_b1);
-			ft_indexing(*a);
+			ps_stackadd_front(a, tmp_b1);
+			ps_indexing(*a);
 			if (*b != NULL)
-				ft_indexing(*b);
+				ps_indexing(*b);
 		}
 	}
 }
 
-static void	ft_push_b(t_stack **a, t_stack **b)
+static void	ps_push_b(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp_a;
 
@@ -76,20 +76,20 @@ static void	ft_push_b(t_stack **a, t_stack **b)
 		}
 		else
 			*a = NULL;
-		ft_stackadd_front(b, tmp_a);
-		ft_indexing(*a);
-		ft_indexing(*b);
+		ps_stackadd_front(b, tmp_a);
+		ps_indexing(*a);
+		ps_indexing(*b);
 	}
 }
 
 void	push_a(t_stack **a, t_stack **b)
 {
-	ft_push_a(a, b);
+	ps_push_a(a, b);
 	ft_printf("pa\n");
 }
 
 void	push_b(t_stack **a, t_stack **b)
 {
-	ft_push_b(a, b);
+	ps_push_b(a, b);
 	ft_printf("pb\n");
 }

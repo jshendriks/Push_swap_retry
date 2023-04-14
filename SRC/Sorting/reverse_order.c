@@ -6,7 +6,7 @@
 /*   By: jhendrik <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/09 11:42:34 by jhendrik      #+#    #+#                 */
-/*   Updated: 2023/04/06 13:56:31 by jhendrik      ########   odam.nl         */
+/*   Updated: 2023/04/14 16:42:53 by jhendrik      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 #include "sorting.h"
@@ -20,7 +20,7 @@
 
 void	reverse_order_a(t_stack **a, t_stack **b)
 {
-	push_b_ntimes(a, b, ft_stacksize(*a));
+	push_b_ntimes(a, b, ps_stacksize(*a));
 	while (*b != NULL)
 	{
 		if ((*b)->next != NULL)
